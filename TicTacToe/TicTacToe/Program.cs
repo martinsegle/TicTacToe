@@ -1,6 +1,8 @@
-﻿
+﻿using TicTacToe;
 
-Console.WriteLine("Hello, komanda!");
-Console.WriteLine("Labdien!");
-Console.WriteLine("Hello from Ilmars");
-Console.WriteLine("Sveiki");
+Person Player1 = new Person();
+Person Player2 = new Person();
+
+
+Console.WriteLine("Spēlētājs Nr.1 Ievadi savu vārdu");
+Console.WriteLine("Spēlētājs Nr.2 Ievadi savu vārdu");
