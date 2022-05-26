@@ -3,14 +3,12 @@ namespace TicTacToe
 {
     public class Player
     {
-       
-        public Player (string name) 
+        public Player()
         {
             Name = name;
-
             Console.WriteLine($"Spēlētājs{name}");
         }
-     
+
 
          public string Name { get; }
     }
