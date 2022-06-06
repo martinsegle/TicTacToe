@@ -6,6 +6,8 @@ Console.WriteLine();
 Console.WriteLine("============= Player Nr.1 =================");
 Console.WriteLine();
 
+
+
 Console.WriteLine("Spēlētājs Nr.1 Ievadi savu vārdu");
 string name1 = Console.ReadLine();
 
@@ -50,7 +52,7 @@ if (string.IsNullOrWhiteSpace(name2))
     }
 }
 
-Player2 player2 = new Player(name2);
+Player player2 = new Player(name2);
 
 //Jāprasa lietotājiem kādu lauku vēlas aizpildīt.
 string[] arr = { "1", "2", "3", "4", "5", "6", "7", "8", "9", };
@@ -60,7 +62,11 @@ Console.WriteLine($"Spēlētāj Nr.1 {name1} aizpildi izvēlēto lauku no 1-9");
 Console.WriteLine($"Spēlētāj Nr.2 {name2} aizpildi izvēlēto lauku no 1-9");
 
 
-GameBoard.Board();  //šis sasien kopā GameBoard failu ar Program failu
+GameBoard.Board();
+GameBoard.Board();//šis sasien kopā GameBoard failu ar Program failu
+GameBoard.CheckWin();
+
+
 
 
 Console.WriteLine();
