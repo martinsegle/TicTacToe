@@ -18,9 +18,11 @@
             Console.WriteLine($"Spēlētājs Nr.2 {name2} tavs simbols'O'");
         }
         public string Name2 { get; }
-    {
-        static int player = 1;
     }
+    
+
+
+        
       
 
     

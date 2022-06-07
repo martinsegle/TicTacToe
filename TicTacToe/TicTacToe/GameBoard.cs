@@ -1,4 +1,6 @@
-﻿namespace TicTacToe
+﻿
+
+namespace TicTacToe
 {
     public class GameBoard
     {
@@ -20,7 +22,18 @@
             Console.WriteLine("     |     |      ");
         }
 
+
+        public static class CheckWin
+        {
+            public static string Get(int number)
+            {
+                if (arr[1] == arr[2] && arr[2] == arr[3])
+                {
+                    return "";
+                }
+                return "";
+            }
+        }
     }
-        
-    
 }
+

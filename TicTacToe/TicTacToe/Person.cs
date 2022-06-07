@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    public class Person
+    static class Person
     {
 
         //Pārbaude, vai kāds spēlētājs ir uzvarējis vai nav uzvarējis
@@ -63,6 +63,7 @@
                 return 0;
             }
         }
+
     }
 }
 
