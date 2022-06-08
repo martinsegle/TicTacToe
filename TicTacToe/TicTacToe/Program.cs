@@ -28,11 +28,54 @@ namespace TicTacToe
                 board[row, col] = player;
 
                 //check if we won
+                //Pirmā līnija
                 if (player == board[0, 0] && player == board[0, 1] && player == board[0, 2])
                 {
                     Console.WriteLine(player + "has won the game!");
                     //Console.ReadKey() - NOMAINĀM uz šo gameEnd = true;
-                    // gameEnd = true; ŠO NOMAINĀM UZ break;
+                    //gameEnd = true; ŠO NOMAINĀM UZ break;
+                    break;
+                }
+                //Otrā līnija
+                if (player == board[1, 0] && player == board[1, 1] && player == board[1, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //trešā līnija
+                if (player == board[2, 0] && player == board[1, 0] && player == board[2, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //Pirmā kolona
+                if (player == board[0, 0] && player == board[0, 1] && player == board[0, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //otrā kolona
+                if (player == board[0, 1] && player == board[1, 1] && player == board[2, 1])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //trešā kolona
+                if (player == board[0, 2] && player == board[1, 2] && player == board[2, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //diognāles
+                if (player == board[2, 0] && player == board[1, 1] && player == board[0, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
+                    break;
+                }
+                //diognāles
+                if (player == board[0, 0] && player == board[1, 1] && player == board[2, 2])
+                {
+                    Console.WriteLine(player + "has won the game!");
                     break;
                 }
                 // pēc katra riņķa čeko vai nav DRAW, ja ir DRAW, tad neviens nav uzvarējis
