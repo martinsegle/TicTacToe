@@ -6,9 +6,10 @@ namespace TicTacToe
         public Person(string playername)
         {
             Name = playername;
-            Console.WriteLine($"Spēlētājs Nr.1 {playername}");
+            Console.WriteLine($" {playername}");
         }
         public string Name { get; }
 
     }
+
 }

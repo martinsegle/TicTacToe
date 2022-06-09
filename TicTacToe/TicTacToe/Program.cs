@@ -2,59 +2,65 @@
 using System;
 using TicTacToe;
 
-
 namespace TicTacToe
 {
+    
+    
     class MainClass
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Spēlētājs Nr.1 Ievadi savu vārdu");
+            string appName = Wellcome.ApplicationName;
+            Console.WriteLine($"Wellcom to {appName}");
+            Console.WriteLine();
+
+            Console.WriteLine("First player's name is?");
             string name1 = Console.ReadLine();
 
 
             if (string.IsNullOrWhiteSpace(name1))
             {
-                Console.WriteLine("Tu neievadīji savu vārdu, mēģini vēlreiz");
+                Console.WriteLine("You did not enter your name, please try again");
                 name1 = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(name1))
                 {
-                    Console.WriteLine("Jūs būsiet Spēlētājs Nr.1");
+                    Console.WriteLine("You will be a Player 'X'");
                 }
                 else
                 {
-                    Console.WriteLine($"Tavs vārds ir: {name1}");
+                    Console.WriteLine($"Player {name1} play with 'X'");
                 }
             }
+            Console.WriteLine();
 
-            Person player1 = new Person(name1);
+            Person player1 = new Person($"Player {name1} play with 'X'");
 
+            Console.WriteLine();
 
-
-            Console.WriteLine("Spēlētājs Nr.2 Ievadi savu vārdu");
+            Console.WriteLine("Second player's name is?");
             string name2 = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(name2))
             {
-                Console.WriteLine("Tu neievadīji savu vārdu, mēģini vēlreiz");
+                Console.WriteLine("You did not enter your name, please try again");
                 name2 = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(name2))
                 {
-                    Console.WriteLine("Jūs būsiet Spēlētājs Nr.2");
+                    Console.WriteLine("You will be a Player 'O'");
                 }
                 else
                 {
-                    Console.WriteLine($"Tavs vārds ir: {name2}");
+                    Console.WriteLine($"Player {name2} play with 'O'");
                 }
             }
 
-            Person player2 = new Person(name2);
+            Person player2 = new Person($"Player {name2} play with 'O'");
 
             char player = 'X';
             string playerName = player1.Name;
-            
+
 
             // char[,] board = new char[3, 3]; //app izveido board - dēli
             // Initialize.Game(board); // sakārto dēli ar atstarpēm
@@ -66,13 +72,15 @@ namespace TicTacToe
                 Console.Clear();
                 GameBoard.Board(arr);
 
-                Console.Write($"Please enter row: {playerName} ");
+                //Console.Write($"Please enter row: {playerName} ");
+                // ŠEIT PRASA, LAI SPĒLĒTĀJS SĀK IZVĒLĒTIES SKAITLI
+                Console.Write($" {playerName} ");
                 //int row = Convert.ToInt32(Console.ReadLine());
                 int cell = Convert.ToInt32(Console.ReadLine());
                 //Console.Write("Please enter col: ");
                 //int col = Convert.ToInt32(Console.ReadLine());
                 //Console.WriteLine("row: " + row + " col: " + col);
-                Console.WriteLine("row: " + cell);
+                Console.WriteLine("With a Number: " + cell);
 
                 //board[row, col] = player;
                 arr[cell - 1] = player;
@@ -133,8 +141,8 @@ namespace TicTacToe
 
                 if (movesPlayed == 9) // ja ir bijuši 9 riņķi un ja nav atrasts vinētājs, tad ir GAME OVER
                 {
-                    Console.WriteLine("DRAW");
-                    break; // bez brake nerādīs DRAW
+                    Console.WriteLine("Game Over (You have selected numbers 9 times)");
+                    break; // bez brake nerādīs Game Over
                 }
 
                 // Celebration For Winner.

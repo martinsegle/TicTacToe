@@ -4,34 +4,12 @@ namespace TicTacToe
 {
     public class GameBoard
     {
-        //        public static void Board(char[,] board)
-        //        {
-        //            Console.WriteLine(" | 0 | 1 | 2 |");
-        //            for (int row = 0; row < 3; row++)
-        //            {
-        //                Console.Write(row + "| ");
-        //                for (int col = 0; col < 3; col++)
-        //                {
-        //                    Console.Write(board[row, col]);
-        //                    Console.Write(" | ");
-        //                }
-        //                Console.WriteLine();
-        //            }
-        //        }
-        //        public static class CheckWin
-        //        {
-        //            public static string Get(int number)
-        //            {
-        //                return "TestOK";
-        //            }
-        //        }
-        //    }
-        //}
 
-        // GameBoard metode kas zīmē lauku
-
-        public static void Board(char [] arr)
+        public static void Board(char[] arr)
         {
+            string appName = Wellcome.ApplicationName;
+            Console.WriteLine($"Let's Play {appName}");
+            Console.WriteLine();
 
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[0], arr[1], arr[2]);
@@ -42,7 +20,37 @@ namespace TicTacToe
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[6], arr[7], arr[8]);
             Console.WriteLine("     |     |      ");
+
+            Console.WriteLine();
+            Console.WriteLine("Choose Your number");
+            Console.WriteLine();
+        }
+    }
+    //        public static void Board(char[,] board)
+    //        {
+    //            Console.WriteLine(" | 0 | 1 | 2 |");
+    //            for (int row = 0; row < 3; row++)
+    //            {
+    //                Console.Write(row + "| ");
+    //                for (int col = 0; col < 3; col++)
+    //                {
+    //                    Console.Write(board[row, col]);
+    //                    Console.Write(" | ");
+    //                }
+    //                Console.WriteLine();
+    //            }
+    //        }
+    
+    // RANDOM KODS LAI IZVEIDOTU CheckWinTest
+    public class CheckWin
+    {
+        public static string Get(int number)
+        {
+            return "TestOK";
         }
     }
 }
+
+
+
 
