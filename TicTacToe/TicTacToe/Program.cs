@@ -4,8 +4,8 @@ using TicTacToe;
 
 namespace TicTacToe
 {
-    
-    
+
+
     class MainClass
     {
         public static void Main(string[] args)
@@ -36,7 +36,9 @@ namespace TicTacToe
 
             Person player1 = new Person($"Player {name1} play with 'X'");
 
+
             Console.WriteLine();
+
 
             Console.WriteLine("Second player's name is?");
             string name2 = Console.ReadLine();
@@ -58,32 +60,47 @@ namespace TicTacToe
 
             Person player2 = new Person($"Player {name2} play with 'O'");
 
+
+
+            //Person player2 = new Person($"Computer");
+
+
+
             char player = 'X';
             string playerName = player1.Name;
 
-
-            // char[,] board = new char[3, 3]; //app izveido board - dēli
-            // Initialize.Game(board); // sakārto dēli ar atstarpēm
             int movesPlayed = 0; // ja ir DRAW neveiksme, neviens nav uzvarējis
             char[] arr = { '1', '2', '3', '4', '5', '6', '7', '8', '9', };
 
+
             while (true)
             {
+                //    while (userTurn == -1 || arr[userTurn] !=0 )
+                //    {
+                //        Console.Write($" {playerName} ");
+                //        userTurn = int.Parse(Console.ReadLine());
+                //        Console.WriteLine("Youtype" + userTurn);
+                //    }
+                //    arr[userTurn] = 1;
+                //    while (computerTurn == -1 || arr[computerTurn] != 0)
+                //    {
+                //        computerTurn = rand.Next(8);
+                //        Console.WriteLine("Computer chooses " + computerTurn);
+                //    }
+                //    arr[computerTurn] = 2;
+
                 Console.Clear();
+
                 GameBoard.Board(arr);
 
-                //Console.Write($"Please enter row: {playerName} ");
                 // ŠEIT PRASA, LAI SPĒLĒTĀJS SĀK IZVĒLĒTIES SKAITLI
                 Console.Write($" {playerName} ");
-                //int row = Convert.ToInt32(Console.ReadLine());
-                int cell = Convert.ToInt32(Console.ReadLine());
-                //Console.Write("Please enter col: ");
-                //int col = Convert.ToInt32(Console.ReadLine());
-                //Console.WriteLine("row: " + row + " col: " + col);
-                Console.WriteLine("With a Number: " + cell);
 
-                //board[row, col] = player;
-                arr[cell - 1] = player;
+                int nummbers = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("With a Number: " + nummbers);
+
+                arr[nummbers - 1] = player;
 
                 //check if we won
                 //Pirmā līnija
@@ -152,6 +169,7 @@ namespace TicTacToe
 
                 player = Player.ChangeTurn(player);
                 playerName = player2.Name;
+
             }
         }
     }
