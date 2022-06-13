@@ -4,14 +4,19 @@ using TicTacToe;
 
 namespace TicTacToe
 {
-
-
     class MainClass
     {
+
         public static void Main(string[] args)
         {
             string appName = Wellcome.ApplicationName;
-            Console.WriteLine($"Wellcom to {appName}");
+
+            ConsoleLogger console = new ConsoleLogger();
+            FileLogger file = new FileLogger();
+
+            console.Log($"Wellcom to {appName}");
+            file.Log($"Wellcom to {appName}");
+
             Console.WriteLine();
 
             Console.WriteLine("First player's name is?");
@@ -169,6 +174,8 @@ namespace TicTacToe
 
                 player = Player.ChangeTurn(player);
                 playerName = player2.Name;
+
+             
 
             }
         }
