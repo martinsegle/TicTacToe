@@ -19,6 +19,7 @@ namespace TicTacToe
 
             Console.WriteLine();
 
+
             Console.WriteLine("First player's name is?");
             string name1 = Console.ReadLine();
 
@@ -30,20 +31,24 @@ namespace TicTacToe
 
                 if (string.IsNullOrWhiteSpace(name1))
                 {
-                    Console.WriteLine("You will be a Player 'X'");
+                    Console.WriteLine("You will BE a Player");
                 }
                 else
                 {
-                    Console.WriteLine($"Player {name1} play with 'X'");
+                    Console.WriteLine($"Player {name1} play WITH");
                 }
             }
-            Console.WriteLine();
-
-            Person player1 = new Person($"Player {name1} play with 'X'");
-
 
             Console.WriteLine();
 
+            Console.WriteLine($" {name1} choice 'x' or 'o'");
+            string userText = Console.ReadLine();
+
+            Person player1 = new Person($"Player {name1} PLAY with {userText}");
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
 
             Console.WriteLine("Second player's name is?");
             string name2 = Console.ReadLine();
@@ -69,12 +74,15 @@ namespace TicTacToe
 
             //Person player2 = new Person($"Computer");
 
-
-
-            char player = 'X';
+            // designation - apzīmējums = First
+            HumanDesignation designation = HumanDesignation.First;
+            char charValue = (char)designation;
+            //char player = 'X';
+            char player = charValue;
             string playerName = player1.Name;
 
             int movesPlayed = 0; // ja ir DRAW neveiksme, neviens nav uzvarējis
+
             char[] arr = { '1', '2', '3', '4', '5', '6', '7', '8', '9', };
 
 

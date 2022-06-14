@@ -6,7 +6,5 @@ namespace TicTacToe
     {
         First = 'X',
         Second = 'O',
-
-
     }
 }
