@@ -9,6 +9,7 @@ namespace TicTacToe
             Console.WriteLine($" {playername}");
         }
         public string Name { get; }
+        public string Simbol { get; set; }
 
     }
 

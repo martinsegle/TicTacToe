@@ -45,6 +45,7 @@ namespace TicTacToe
             string userText = Console.ReadLine();
 
             Person player1 = new Person($"Player {name1} PLAY with {userText}");
+            player1.Simbol = userText;
 
             Console.WriteLine();
             Console.WriteLine();
@@ -60,15 +61,27 @@ namespace TicTacToe
 
                 if (string.IsNullOrWhiteSpace(name2))
                 {
-                    Console.WriteLine("You will be a Player 'O'");
+                    Console.WriteLine("You will be a Player");
                 }
                 else
                 {
-                    Console.WriteLine($"Player {name2} play with 'O'");
+                    Console.WriteLine($"Player {name2} play with");
                 }
             }
 
-            Person player2 = new Person($"Player {name2} play with 'O'");
+            Person player2 = new Person($"Player {name2} play with");
+            player1.Simbol = userText;
+            if (player1.Simbol == "x")
+            {
+                player2.Simbol = "o";
+            }
+            else
+            {
+                player2.Simbol = "x";
+            }
+
+            Console.WriteLine($"Player {name2} play with {player2.Simbol}");
+
 
 
 
@@ -107,7 +120,7 @@ namespace TicTacToe
                 GameBoard.Board(arr);
 
                 // ŠEIT PRASA, LAI SPĒLĒTĀJS SĀK IZVĒLĒTIES SKAITLI
-                Console.Write($" {playerName} ");
+                Console.Write($" LŪDZU IEVADI PIEMĒRAM {playerName} ");
 
                 int nummbers = Convert.ToInt32(Console.ReadLine());
 
@@ -181,9 +194,9 @@ namespace TicTacToe
                 // Mention Who Won or If it was Draw
 
                 player = Player.ChangeTurn(player);
-                playerName = player2.Name;
+                playerName = Player.ChangeName(name1, name2, playerName);
 
-             
+
 
             }
         }
