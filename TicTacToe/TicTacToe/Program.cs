@@ -196,7 +196,7 @@ namespace TicTacToe
                 player = Player.ChangeTurn(player);
                 playerName = Player.ChangeName(name1, name2, playerName);
 
-
+                //Beidzot es ar kautko varēšu sadarīt Imants
 
             }
         }
