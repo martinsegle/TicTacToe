@@ -4,6 +4,7 @@ using TicTacToe;
 
 namespace TicTacToe
 {
+
     class MainClass
     {
 
@@ -44,46 +45,78 @@ namespace TicTacToe
             Console.WriteLine($" {name1} choice 'x' or 'o'");
             string userText = Console.ReadLine();
 
-            Person player1 = new Person($"Player {name1} PLAY with {userText}");
-            player1.Simbol = userText;
+            HumanPlayer human = new HumanPlayer();
+            human.Simbol = userText;
+            Console.WriteLine($"First Player {name1} play with {human.Simbol}");
 
             Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("===============================================");
             Console.WriteLine();
 
-            Console.WriteLine("Second player's name is?");
-            string name2 = Console.ReadLine();
+            HumanPlayer human2 = new HumanPlayer();
+            Console.WriteLine("Second player if You Human press YES or NO?");
 
-            if (string.IsNullOrWhiteSpace(name2))
+            string userChoise = Console.ReadLine();
+            human2.Choise = userChoise;
+            if (human2.Choise == "YES")
             {
-                Console.WriteLine("You did not enter your name, please try again");
-                name2 = Console.ReadLine();
+                Console.WriteLine("Human player's name is?");
+                string name2 = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(name2))
                 {
-                    Console.WriteLine("You will be a Player");
+                    Console.WriteLine("You did not enter your name, please try again");
+                    name2 = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(name2))
+                    {
+                        Console.WriteLine("You will BE a Human");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Human {name2} play WITH");
+                    }
+                    human2.Player();
+                }
+                human.Simbol = userText;
+                if (human.Simbol == "x")
+                {
+                    human2.Simbol = "o";
                 }
                 else
                 {
-                    Console.WriteLine($"Player {name2} play with");
+                    human2.Simbol = "x";
                 }
-            }
 
-            Person player2 = new Person($"Player {name2} play with");
-            player1.Simbol = userText;
-            if (player1.Simbol == "x")
-            {
-                player2.Simbol = "o";
+                Console.WriteLine($"Player {name2} play with {human2.Simbol}");
             }
             else
             {
-                player2.Simbol = "x";
+                ComputerPlayer computer = new ComputerPlayer();
+                computer.Name = "Computer";
+                computer.Computer();
+
             }
 
-            Console.WriteLine($"Player {name2} play with {player2.Simbol}");
+            //Console.WriteLine("Second player's name is?");
+            //string name2 = Console.ReadLine();
 
+            //if (string.IsNullOrWhiteSpace(name2))
+            //{
+            //    Console.WriteLine("You did not enter your name, please try again");
+            //    name2 = Console.ReadLine();
 
+            //    if (string.IsNullOrWhiteSpace(name2))
+            //    {
+            //        Console.WriteLine("You will be a Player");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"Player {name2} play with");
+            //    }
+            //}
 
+            //HumanPlayer player2 = new Game($"Player {name2} play with");
 
             //Person player2 = new Person($"Computer");
 
@@ -92,7 +125,7 @@ namespace TicTacToe
             char charValue = (char)designation;
             //char player = 'X';
             char player = charValue;
-            string playerName = player1.Name;
+            string playerName = human.Name;
 
             int movesPlayed = 0; // ja ir DRAW neveiksme, neviens nav uzvarējis
 
@@ -188,17 +221,10 @@ namespace TicTacToe
                     break; // bez brake nerādīs Game Over
                 }
 
-                // Celebration For Winner.
-                // Clear the screen
-                // Print the Board
-                // Mention Who Won or If it was Draw
-
-                player = Player.ChangeTurn(player);
-                playerName = Player.ChangeName(name1, name2, playerName);
-
-                //Beidzot es ar kautko varēšu sadarīt Imants
 
             }
+            player = Player.ChangeTurn(player);
+            playerName = Player.ChangeName(name1, name2, playerName);
         }
     }
 }

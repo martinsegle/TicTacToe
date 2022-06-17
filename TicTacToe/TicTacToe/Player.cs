@@ -14,15 +14,15 @@
                 return 'X';
             }
         }
-        public static string ChangeName(string player1, string player2, string currentPlayer)
+        public static string ChangeName(string human, string human2, string currentPlayer)
         {
-            if (currentPlayer == player1)
+            if (currentPlayer == human)
             {
-                return player2;
+                return human2;
             }
             else
             {
-                return player1;
+                return human;
             }
         }
     }
