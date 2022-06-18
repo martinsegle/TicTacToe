@@ -20,6 +20,7 @@ namespace TicTacToe
 
             Console.WriteLine();
 
+            HumanPlayer human = new HumanPlayer();
 
             Console.WriteLine("First player's name is?");
             string name1 = Console.ReadLine();
@@ -32,11 +33,11 @@ namespace TicTacToe
 
                 if (string.IsNullOrWhiteSpace(name1))
                 {
-                    Console.WriteLine("You will BE a Player");
+                    Console.WriteLine($"You will BE a Player {human.Simbol}");
                 }
                 else
                 {
-                    Console.WriteLine($"Player {name1} play WITH");
+                    Console.WriteLine($"Player {name1} play WITH {human.Simbol}");
                 }
             }
 
@@ -45,8 +46,9 @@ namespace TicTacToe
             Console.WriteLine($" {name1} choice 'x' or 'o'");
             string userText = Console.ReadLine();
 
-            HumanPlayer human = new HumanPlayer();
+            human.Name = name1;
             human.Simbol = userText;
+
             Console.WriteLine($"First Player {name1} play with {human.Simbol}");
 
             Console.WriteLine();
@@ -57,7 +59,7 @@ namespace TicTacToe
 
             string name2 = "";
 
-            Console.WriteLine("Second player if You Human press YES");
+            Console.WriteLine("If You are not computer write YES");
 
             string userChoise = Console.ReadLine();
             human2.Choise = userChoise;
@@ -75,12 +77,14 @@ namespace TicTacToe
 
                     if (string.IsNullOrWhiteSpace(name2))
                     {
-                        Console.WriteLine("You will BE a Human");
+                        Console.WriteLine($"You will be a HUMAN {human2.Simbol}");
                     }
                     else
                     {
-                        Console.WriteLine($"Human {name2} play WITH");
+                        Console.WriteLine($"Human {name2} play WITH {human2.Simbol}");
                     }
+                    human2.Name = name2;
+                    human2.Player();
                 }
 
             }
@@ -91,7 +95,6 @@ namespace TicTacToe
                 computer.Computer();
 
             }
-            human2.Player();
             human.Simbol = userText;
             if (human.Simbol == "x")
             {
@@ -104,13 +107,14 @@ namespace TicTacToe
 
             Console.WriteLine($"Second Player {name2} play with {human2.Simbol}");
 
+
             Console.WriteLine();
             Console.WriteLine("===============================================");
             Console.WriteLine();
 
-            Console.WriteLine($"Press ENTER START to GAME");
+            Console.WriteLine($"Press ENTER to START {appName}");
 
-            Console.Clear();
+            Console.ReadKey();
 
             HumanDesignation designation = HumanDesignation.First;
             char charValue = (char)designation;
@@ -145,7 +149,7 @@ namespace TicTacToe
 
                 playerName = Player.ChangeName(name1, name2, playerName);
 
-                Console.Write($" LŪDZU IZVĒLĒTO BRĪVO SKAITLI {playerName} ");
+                Console.Write($"{playerName} LŪDZU izvēlēs brīvo skaitli" );
 
                 int nummbers = Convert.ToInt32(Console.ReadLine());
 
@@ -159,7 +163,7 @@ namespace TicTacToe
                 //Pirmā līnija
                 if (player == arr[0] && player == arr[1] && player == arr[2])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     //Console.ReadKey() - NOMAINĀM uz šo gameEnd = true;
                     //gameEnd = true; ŠO NOMAINĀM UZ break;
                     break;
@@ -167,43 +171,43 @@ namespace TicTacToe
                 //Otrā līnija
                 if (player == arr[3] && player == arr[4] && player == arr[5])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //trešā līnija
                 if (player == arr[6] && player == arr[7] && player == arr[8])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //Pirmā kolona
                 if (player == arr[0] && player == arr[3] && player == arr[6])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //otrā kolona
                 if (player == arr[1] && player == arr[4] && player == arr[7])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //trešā kolona
                 if (player == arr[2] && player == arr[5] && player == arr[8])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //diognāles
                 if (player == arr[0] && player == arr[4] && player == arr[8])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 //diognāles
                 if (player == arr[2] && player == arr[4] && player == arr[6])
                 {
-                    Console.WriteLine(player + "has won the game!");
+                    Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
                 // pēc katra riņķa čeko vai nav DRAW, ja ir DRAW, tad neviens nav uzvarējis
