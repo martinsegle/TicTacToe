@@ -85,6 +85,17 @@ namespace TicTacToe
                     }
                     human2.Name = name2;
                     human2.Player();
+
+                    human.Simbol = userText;
+                    if (human.Simbol == "x")
+                    {
+                        human2.Simbol = "o";
+                    }
+                    else
+                    {
+                        human2.Simbol = "x";
+                    }
+                    Console.WriteLine($"Second Player {name2} play with {human2.Simbol}");
                 }
 
             }
@@ -94,18 +105,18 @@ namespace TicTacToe
                 computer.Name = "Computer";
                 computer.Computer();
 
-            }
-            human.Simbol = userText;
-            if (human.Simbol == "x")
-            {
-                human2.Simbol = "o";
-            }
-            else
-            {
-                human2.Simbol = "x";
-            }
+                human.Simbol = userText;
+                if (human.Simbol == "x")
+                {
+                    human2.Simbol = "o";
+                }
+                else
+                {
+                    human2.Simbol = "x";
+                }
+                Console.WriteLine($"Coputer play with {human2.Simbol}");
 
-            Console.WriteLine($"Second Player {name2} play with {human2.Simbol}");
+            }
 
 
             Console.WriteLine();
@@ -135,6 +146,8 @@ namespace TicTacToe
                 //        userTurn = int.Parse(Console.ReadLine());
                 //        Console.WriteLine("Youtype" + userTurn);
                 //    }
+
+
                 //    arr[userTurn] = 1;
                 //    while (computerTurn == -1 || arr[computerTurn] != 0)
                 //    {
@@ -149,15 +162,18 @@ namespace TicTacToe
 
                 playerName = Player.ChangeName(name1, name2, playerName);
 
-                Console.Write($"{playerName} LŪDZU izvēlēs brīvo skaitli" );
-
-                int nummbers = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("With a Number: " + nummbers);
+                bool couldParse;
+                int number;
+                do
+                {
+                    Console.Write($"{playerName} LŪDZU izvēlēs brīvo skaitli   ");
+                    string userInput = Console.ReadLine();
+                    couldParse = int.TryParse(userInput, out number);
+                } while (!couldParse);
 
                 player = Player.ChangeTurn(player);
 
-                arr[nummbers - 1] = player;
+                arr[number - 1] = player;
 
                 //check if we won
                 //Pirmā līnija
@@ -210,6 +226,9 @@ namespace TicTacToe
                     Console.WriteLine($"{playerName} has won the game!");
                     break;
                 }
+                // pasaka ar kuru nr. viņš ir vinnējis
+                Console.WriteLine("With a Number: " + number);
+
                 // pēc katra riņķa čeko vai nav DRAW, ja ir DRAW, tad neviens nav uzvarējis
                 movesPlayed = movesPlayed + 1;
 
