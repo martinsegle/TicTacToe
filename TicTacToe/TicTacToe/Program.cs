@@ -67,6 +67,7 @@ namespace TicTacToe
                 {
                     computer.Simbol = "o";
                 }
+
                 else
                 {
                     computer.Simbol = "x";
@@ -76,8 +77,9 @@ namespace TicTacToe
                 Console.WriteLine($"Press ENTER to START {appName}");
                 Console.ReadKey();
 
-                GameWithComputer newGame2 = new GameWithComputer();
+                GameWithHuman newGame2 = new GameWithHuman();
                 newGame2.PlayGame(human1, computer);
+
 
             }
         }
