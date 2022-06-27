@@ -6,7 +6,7 @@ namespace TicTacToe
     {
         public void Player()
         {
-            Console.WriteLine($"SPĒLĒS CILVĒKS AR CILVĒKU");
+            Console.WriteLine($"HUMAN will play with HUMAN");
 
         }
         public void AskName()
@@ -37,7 +37,7 @@ namespace TicTacToe
 
         public override int MakeMove()
         {
-                        bool couldParse;
+            bool couldParse;
             int number;
             do
             {

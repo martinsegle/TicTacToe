@@ -29,11 +29,17 @@ namespace TicTacToe
             {
                 //izveidojam objektu
                 HumanPlayer human1 = new HumanPlayer();
+                human1.Player();
                 human1.AskName();
                 human1.AskSimbol();
                 human1.ShowPlayerInfo();
 
+                Console.WriteLine();
+
                 HumanPlayer human2 = new HumanPlayer();
+
+                Console.WriteLine("Second HUMAN");
+
                 human2.AskName();
 
                 if (human1.Simbol == "x")
@@ -46,6 +52,7 @@ namespace TicTacToe
                 }
                 human2.ShowPlayerInfo();
 
+                Console.WriteLine();
                 Console.WriteLine($"Press ENTER to START {appName}");
                 Console.ReadKey();
 
@@ -55,24 +62,27 @@ namespace TicTacToe
             }
             else
             {
+                ComputerPlayer computer = new ComputerPlayer();
+                computer.Computer();
+                computer.Name = "Computer";
+
                 HumanPlayer human1 = new HumanPlayer();
                 human1.AskName();
                 human1.AskSimbol();
                 human1.ShowPlayerInfo();
 
-                ComputerPlayer computer = new ComputerPlayer();
-                computer.Name = "Computer";
-
-                if (human1.Simbol == "x")
-                {
-                    computer.Simbol = "o";
-                }
-
-                else
+                if (human1.Simbol == "o")
                 {
                     computer.Simbol = "x";
                 }
+
+                else 
+                {
+                    computer.Simbol = "o";
+                }
                 computer.ShowPlayerInfo();
+
+                Console.WriteLine();
 
                 Console.WriteLine($"Press ENTER to START {appName}");
                 Console.ReadKey();
