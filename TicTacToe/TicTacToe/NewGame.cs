@@ -36,11 +36,7 @@ namespace TicTacToe
                 {
                     number = player2.MakeMove();
                 }
-
-                player = Player.ChangeTurn(player);
-
                 arr[number - 1] = player;
-
                 //check if we won
                 //Pirmā līnija
                 if (player == arr[0] && player == arr[1] && player == arr[2])
@@ -103,6 +99,9 @@ namespace TicTacToe
                     Console.WriteLine("Game Over (You have selected numbers 9 times)");
                     break; // bez brake nerādīs Game Over
                 }
+                
+                player = Player.ChangeTurn(player);
+                playerName = player2.Name;
             }
         }
 

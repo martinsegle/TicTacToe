@@ -71,14 +71,14 @@ namespace TicTacToe
                 human1.AskSimbol();
                 human1.ShowPlayerInfo();
 
-                if (human1.Simbol == "o")
+                if (human1.Simbol == "x")
                 {
-                    computer.Simbol = "x";
+                    computer.Simbol = "o";
                 }
 
                 else 
                 {
-                    computer.Simbol = "o";
+                    computer.Simbol = "x";
                 }
                 computer.ShowPlayerInfo();
 
