@@ -29,7 +29,7 @@ namespace TicTacToe
 
             while (string.IsNullOrWhiteSpace(userText) || (userText != "x" && userText != "o"))
             {
-                Console.WriteLine("IEVADI MUMS SIMBOLU");
+                Console.WriteLine("Enter simbol");
                 userText = Console.ReadLine();
             }
             Simbol = userText;
@@ -41,7 +41,7 @@ namespace TicTacToe
             int number;
             do
             {
-                Console.Write($"{Name} LŪDZU izvēlēs brīvo skaitli   ");
+                Console.Write($"{Name} Please select a free number");
                 string userInput = Console.ReadLine();
                 couldParse = int.TryParse(userInput, out number);
             } while (!couldParse);
