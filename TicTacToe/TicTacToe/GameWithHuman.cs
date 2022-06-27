@@ -25,14 +25,17 @@ namespace TicTacToe
 
                 playerName = Player.ChangeName(player1.Name, player2.Name, playerName);
 
-                bool couldParse;
                 int number;
-                do
+
+                //ToString pateica, ka (char) ir teksts
+                if (player.ToString().ToUpper() == player1.Simbol.ToUpper())
                 {
-                    Console.Write($"{playerName} LŪDZU izvēlēs brīvo skaitli   ");
-                    string userInput = Console.ReadLine();
-                    couldParse = int.TryParse(userInput, out number);
-                } while (!couldParse);
+                    number = player1.MakeMove();
+                }
+                else
+                {
+                    number = player2.MakeMove();
+                }
 
                 player = Player.ChangeTurn(player);
 
