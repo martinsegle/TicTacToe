@@ -2,7 +2,7 @@
 
 namespace TicTacToe
 {
-    public class GameWithHuman : Game
+    public class NewGame : Game
     {
         public void PlayGame(BasePlayer player1, BasePlayer player2)
         {

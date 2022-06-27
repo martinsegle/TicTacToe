@@ -49,7 +49,7 @@ namespace TicTacToe
                 Console.WriteLine($"Press ENTER to START {appName}");
                 Console.ReadKey();
 
-                GameWithHuman newGame = new GameWithHuman();
+                NewGame newGame = new NewGame();
                 newGame.PlayGame(human1, human2);
 
             }
@@ -77,7 +77,7 @@ namespace TicTacToe
                 Console.WriteLine($"Press ENTER to START {appName}");
                 Console.ReadKey();
 
-                GameWithHuman newGame2 = new GameWithHuman();
+                NewGame newGame2 = new NewGame();
                 newGame2.PlayGame(human1, computer);
 
 

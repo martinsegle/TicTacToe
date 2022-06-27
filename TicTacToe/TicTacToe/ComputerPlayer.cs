@@ -22,6 +22,13 @@ namespace TicTacToe
         //    }
         //    arr[computerTurn] = 2;
         }
+        public override int MakeMove()
+        {
+            Random random = new Random();
+            int computerNumber = random.Next(1, 10);
+
+            return computerNumber;
+        }
     }
 }
 

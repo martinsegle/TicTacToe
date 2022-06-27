@@ -2,7 +2,7 @@
 
 namespace TicTacToe
 {
-    public class BasePlayer
+    public abstract class BasePlayer
     {
         public static readonly string ApplicationName = "TicTacToe game";
 
@@ -16,5 +16,6 @@ namespace TicTacToe
         {
             Console.WriteLine($"Player {Name} play with {Simbol}");
         }
+        public abstract int MakeMove();
     }
 }

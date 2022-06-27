@@ -37,7 +37,7 @@ namespace TicTacToe
 
         public override int MakeMove()
         {
-            bool couldParse;
+                        bool couldParse;
             int number;
             do
             {
