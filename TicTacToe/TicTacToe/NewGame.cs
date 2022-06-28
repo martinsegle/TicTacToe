@@ -30,11 +30,11 @@ namespace TicTacToe
                 //ToString pateica, ka (char) ir teksts
                 if (player.ToString().ToUpper() == player1.Simbol.ToUpper())
                 {
-                    number = player1.MakeMove();
+                    number = player1.MakeMove(arr);
                 }
                 else
                 {
-                    number = player2.MakeMove();
+                    number = player2.MakeMove(arr);
                 }
                 arr[number - 1] = player;
                 //check if we won

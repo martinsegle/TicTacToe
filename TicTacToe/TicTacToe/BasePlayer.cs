@@ -19,9 +19,9 @@ namespace TicTacToe
         public abstract int MakeMove(char[] gameArray);
 
         //Metode paņem masīvu ar elementiem un pārbauda, vai izvēlētājā ailē nav gadījumā X vai O
-        protected boolean IsNumberAlreadyUse(char[] gameArray, int playerNumbe)
+        protected bool IsNumberAlreadyUse(char[] gameArray, int playerNumber)
         {
-            char valueInArray = char[playerNumber - 1];
+            char valueInArray = gameArray[playerNumber - 1];
             if(valueInArray == 'x' || valueInArray == 'o')
             {
                 return true;

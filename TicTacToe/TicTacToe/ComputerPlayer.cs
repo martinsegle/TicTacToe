@@ -35,7 +35,7 @@ namespace TicTacToe
             do
             {
                 Random random = new Random();
-                int computerNumber = random.Next(1, 10);
+                computerNumber = random.Next(1, 10);
             }
             while (IsNumberAlreadyUse(gameArray, computerNumber));
             Console.WriteLine($"COMPUTER choice {computerNumber} press ENTER to continue");
