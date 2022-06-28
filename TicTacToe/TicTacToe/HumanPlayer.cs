@@ -7,7 +7,6 @@ namespace TicTacToe
         public void Player()
         {
             Console.WriteLine($"HUMAN will play with HUMAN");
-
         }
         public void AskName()
         {
@@ -34,7 +33,6 @@ namespace TicTacToe
             }
             Simbol = userText;
         }
-
         public override int MakeMove(char[] gameArray)
         {
             bool couldParse;

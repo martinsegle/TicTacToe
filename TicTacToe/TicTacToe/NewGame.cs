@@ -8,7 +8,6 @@ namespace TicTacToe
         {
             HumanDesignation designation = HumanDesignation.First;
             char charValue = (char)designation;
-            //char player = 'X';
             char player = charValue;
             string playerName = player1.Name;
 
