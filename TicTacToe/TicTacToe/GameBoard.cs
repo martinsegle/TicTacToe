@@ -26,21 +26,7 @@ namespace TicTacToe
             Console.WriteLine();
         }
     }
-    //        public static void Board(char[,] board)
-    //        {
-    //            Console.WriteLine(" | 0 | 1 | 2 |");
-    //            for (int row = 0; row < 3; row++)
-    //            {
-    //                Console.Write(row + "| ");
-    //                for (int col = 0; col < 3; col++)
-    //                {
-    //                    Console.Write(board[row, col]);
-    //                    Console.Write(" | ");
-    //                }
-    //                Console.WriteLine();
-    //            }
-    //        }
-    
+
     // RANDOM KODS LAI IZVEIDOTU CheckWinTest
     public class CheckWin
     {

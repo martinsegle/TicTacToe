@@ -41,7 +41,7 @@ namespace TicTacToe
             int number;
             do
             {
-                Console.Write($"{Name} Please select a free number");
+                Console.Write($"{Name} Please select a free number  ");
                 string userInput = Console.ReadLine();
                 couldParse = int.TryParse(userInput, out number);
             } while (!couldParse || IsNumberAlreadyUse(gameArray, number));

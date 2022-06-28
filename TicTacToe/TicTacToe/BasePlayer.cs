@@ -22,7 +22,7 @@ namespace TicTacToe
         protected bool IsNumberAlreadyUse(char[] gameArray, int playerNumber)
         {
             char valueInArray = gameArray[playerNumber - 1];
-            if(valueInArray == 'x' || valueInArray == 'o')
+            if(valueInArray == 'X' || valueInArray == 'O')
             {
                 return true;
             }

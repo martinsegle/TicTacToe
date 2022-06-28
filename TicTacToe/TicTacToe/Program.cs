@@ -58,7 +58,6 @@ namespace TicTacToe
 
                 NewGame newGame = new NewGame();
                 newGame.PlayGame(human1, human2);
-
             }
             else
             {
@@ -89,8 +88,6 @@ namespace TicTacToe
 
                 NewGame newGame2 = new NewGame();
                 newGame2.PlayGame(human1, computer);
-
-
             }
         }
     }
