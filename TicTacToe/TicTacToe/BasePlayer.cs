@@ -16,6 +16,18 @@ namespace TicTacToe
         {
             Console.WriteLine($"Player {Name} play with {Simbol}");
         }
-        public abstract int MakeMove();
+        public abstract int MakeMove(char[] gameArray);
+
+        //Metode paņem masīvu ar elementiem un pārbauda, vai izvēlētājā ailē nav gadījumā X vai O
+        protected boolean IsNumberAlreadyUse(char[] gameArray, int playerNumbe)
+        {
+            char valueInArray = char[playerNumber - 1];
+            if(valueInArray == 'x' || valueInArray == 'o')
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

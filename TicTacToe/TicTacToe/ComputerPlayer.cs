@@ -28,11 +28,16 @@ namespace TicTacToe
             Console.WriteLine($"COMPUTER will play with HUMAN");
 
         }
-        public override int MakeMove()
+        public override int MakeMove(char[] gameArray)
         {
-            //random izvēlas rndom nr.
-            Random random = new Random();
-            int computerNumber = random.Next(1, 10);
+            int computerNumber;
+
+            do
+            {
+                Random random = new Random();
+                int computerNumber = random.Next(1, 10);
+            }
+            while (IsNumberAlreadyUse(gameArray, computerNumber));
             Console.WriteLine($"COMPUTER choice {computerNumber} press ENTER to continue");
             Console.ReadKey();
 

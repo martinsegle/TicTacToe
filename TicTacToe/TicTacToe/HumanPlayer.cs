@@ -35,7 +35,7 @@ namespace TicTacToe
             Simbol = userText;
         }
 
-        public override int MakeMove()
+        public override int MakeMove(char[] gameArray)
         {
             bool couldParse;
             int number;
@@ -44,7 +44,7 @@ namespace TicTacToe
                 Console.Write($"{Name} Please select a free number");
                 string userInput = Console.ReadLine();
                 couldParse = int.TryParse(userInput, out number);
-            } while (!couldParse);
+            } while (!couldParse || IsNumberAlreadyUse(gameArray, number));
             return number;
         }
 
