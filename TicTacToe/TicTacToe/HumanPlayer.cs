@@ -30,16 +30,15 @@ namespace TicTacToe
             catch (StringTooLongException stringTooLongException)
             {
                 Console.WriteLine($"Error: {stringTooLongException.Message}");
-            }
-
-            Console.WriteLine("Reenter Player's name!");
-            playerName = Console.ReadLine();
-
-            while (playerName.Length < 2 || playerName.Length > 10)
-            {
-                Console.WriteLine("It is the same error");
+                Console.WriteLine("Reenter Player's name!");
                 playerName = Console.ReadLine();
-            }
+
+                while (playerName.Length < 2 || playerName.Length > 10)
+                {
+                    Console.WriteLine("It is the same error");
+                    playerName = Console.ReadLine();
+                }
+            }                    
 
             Name = playerName;
         }
