@@ -19,13 +19,66 @@ namespace TicTacToe
             file.Log($"Wellcom to {appName}");
 
             Console.WriteLine();
-
-            Console.WriteLine("If You are not computer write YES");
+            Console.WriteLine("If You are not computer write 2022");
+            Console.WriteLine();
 
             string userChoise = Console.ReadLine();
 
+            try
+            {
 
-            if (userChoise == "YES")
+                if (userChoise == "2022")
+                {
+                    throw new NotHumanException("Spēlēsi ar cilvēku");
+                }
+                Console.WriteLine($"ROBOTS spēja uzrakstīt {userChoise} 2022 vietā");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"Tas nebija gadaskaitlis");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine($"Skaitlis ir pa lielu");
+            }
+            catch (NotHumanException notHumanException)
+            {
+                Console.WriteLine($"Kļūdas paziņojums: {notHumanException.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Programmas beigas");
+            }
+
+            //int.userNumber = int.Parse(userChoise);
+            //try
+            //{
+            //    if (userNumber == 2022)
+            //    {
+            //        throw new NotHumanException("Spēlēsi ar cilvēku");
+            //    }
+            //    Console.WriteLine($"ROBOTS spēja uzrakstīt {userNumber} 2022 vietā");
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine($"Tas nebija gadaskaitlis");
+            //}
+            //catch (OverflowException)
+            //{
+            //    Console.WriteLine($"Skaitlis ir pa lielu");
+            //}
+            //catch (NotHumanException notHumanException)
+            //{
+            //    Console.WriteLine($"Kļūdas paziņojums: {notHumanException.Message}");
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("Programmas beigas");
+            //}
+
+            Console.WriteLine();
+
+            if (userChoise == "2022")
             {
                 //izveidojam objektu
                 HumanPlayer human1 = new HumanPlayer();
